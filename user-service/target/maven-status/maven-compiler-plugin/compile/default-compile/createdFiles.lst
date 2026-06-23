@@ -1,1 +1,10 @@
+com\ecommerce\dto\UserDTO.class
+com\ecommerce\service\UserService.class
+com\ecommerce\utils\UserMapperImpl.class
+com\ecommerce\entity\User.class
+com\ecommerce\entity\User$UserBuilder.class
+com\ecommerce\repository\UserRepository.class
+com\ecommerce\controller\UserController.class
+com\ecommerce\utils\UserMapper.class
+com\ecommerce\entity\CountryCode.class
 com\ecommerce\UserServiceApplication.class

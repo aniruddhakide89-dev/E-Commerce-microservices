@@ -27,7 +27,7 @@ public class UserDTO {
     @NotBlank
     private String address;
 
-    @NotBlank
+    @NotNull
     private Long pincode;
 
     @NotNull

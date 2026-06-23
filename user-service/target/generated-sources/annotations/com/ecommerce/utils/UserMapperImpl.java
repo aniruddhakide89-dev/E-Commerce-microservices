@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-06-18T20:47:08+0530",
+    date = "2026-06-23T19:08:57+0530",
     comments = "version: 1.6.3, compiler: javac, environment: Java 21.0.1 (Oracle Corporation)"
 )
 @Component
@@ -21,11 +21,18 @@ public class UserMapperImpl implements UserMapper {
             return null;
         }
 
-        User.Builder builder = null;
+        User.UserBuilder user = User.builder();
 
-        User user = new User( builder );
+        user.username( dto.getUsername() );
+        user.firstName( dto.getFirstName() );
+        user.middleName( dto.getMiddleName() );
+        user.lastName( dto.getLastName() );
+        user.mobileNumber( dto.getMobileNumber() );
+        user.address( dto.getAddress() );
+        user.pincode( dto.getPincode() );
+        user.countryCode( dto.getCountryCode() );
 
-        return user;
+        return user.build();
     }
 
     @Override
@@ -35,6 +42,15 @@ public class UserMapperImpl implements UserMapper {
         }
 
         UserDTO userDTO = new UserDTO();
+
+        userDTO.setUsername( user.getUsername() );
+        userDTO.setFirstName( user.getFirstName() );
+        userDTO.setMiddleName( user.getMiddleName() );
+        userDTO.setLastName( user.getLastName() );
+        userDTO.setMobileNumber( user.getMobileNumber() );
+        userDTO.setAddress( user.getAddress() );
+        userDTO.setPincode( user.getPincode() );
+        userDTO.setCountryCode( user.getCountryCode() );
 
         return userDTO;
     }

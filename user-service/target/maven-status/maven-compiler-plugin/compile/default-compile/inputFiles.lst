@@ -1,1 +1,8 @@
+D:\E-commerce-microservices\user-service\src\main\java\com\ecommerce\controller\UserController.java
+D:\E-commerce-microservices\user-service\src\main\java\com\ecommerce\dto\UserDTO.java
+D:\E-commerce-microservices\user-service\src\main\java\com\ecommerce\entity\CountryCode.java
+D:\E-commerce-microservices\user-service\src\main\java\com\ecommerce\entity\User.java
+D:\E-commerce-microservices\user-service\src\main\java\com\ecommerce\repository\UserRepository.java
+D:\E-commerce-microservices\user-service\src\main\java\com\ecommerce\service\UserService.java
 D:\E-commerce-microservices\user-service\src\main\java\com\ecommerce\UserServiceApplication.java
+D:\E-commerce-microservices\user-service\src\main\java\com\ecommerce\utils\UserMapper.java
