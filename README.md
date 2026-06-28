@@ -80,15 +80,14 @@
 - [ ] Dockerize User Service
 
 ### Product Service
-- [ ] Create Product Service
-- [ ] Register with Eureka
-- [ ] Configure PostgreSQL
-- [ ] Create Product entity
-- [ ] Create Category entity
-- [ ] Create Product APIs
+- [x] Create Product Service
+- [x] Register with Eureka
+- [x] Configure PostgreSQL
+- [x] Create Product entity
+- [x] Create Category entity
+- [x] Create Product APIs
 - [ ] Add pagination
 - [ ] Add product search
-- [ ] Add image handling
 - [ ] Dockerize Product Service
 
 ### Inventory Service
