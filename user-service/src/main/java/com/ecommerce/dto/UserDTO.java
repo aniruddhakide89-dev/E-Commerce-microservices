@@ -1,6 +1,7 @@
 package com.ecommerce.dto;
 
 import com.ecommerce.entity.CountryCode;
+import com.ecommerce.entity.Role;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -32,4 +33,7 @@ public class UserDTO {
 
     @NotNull
     private CountryCode countryCode;
+
+    @NotNull
+    private Role role;
 }

@@ -41,4 +41,9 @@ public class User {
     @Enumerated(EnumType.STRING)
     @Column(name = "countrycode")
     private CountryCode countryCode;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role")
+    private Role role;
+
 }
