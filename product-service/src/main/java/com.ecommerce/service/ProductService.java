@@ -8,9 +8,11 @@ import com.ecommerce.exception.ProductDoesNotExistsException;
 import com.ecommerce.repository.ProductRepository;
 import com.ecommerce.utils.ProductMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -36,8 +38,37 @@ public class ProductService {
         return productMapper.toDTO(product);
     }
 
-    public List<ProductResponseDTO> getALlProducts(){
-        return productMapper.toDTOList(productRepository.findAll());
+    public Page<ProductResponseDTO> getALlProducts(int page, int size){
+        Pageable pageable = PageRequest.of(page,size);
+        Page<Product> productPage = productRepository.findAll(pageable);
+        return productPage.map(productMapper::toDTO);
+    }
+
+    public void deleteProductById(Integer id){
+        if (productRepository.existsById(id)){
+            productRepository.deleteById(id);
+        }
+        else{
+            throw new ProductDoesNotExistsException("Product with id: " +id+ " does not exist");
+        }
+    }
+
+    public ProductResponseDTO updateProduct(ProductRequestDTO productRequestDTO) {
+
+        Product product = productRepository
+                .findByProductName(productRequestDTO.getProductName())
+                .orElseThrow(() -> new ProductDoesNotExistsException(
+                        "Product with name: " + productRequestDTO.getProductName() + " does not exist"));
+
+        product.setDescription(productRequestDTO.getDescription());
+        product.setSku(productRequestDTO.getSku());
+        product.setCategory(productRequestDTO.getCategory());
+        product.setActive(productRequestDTO.getActive());
+        product.setPrice(productRequestDTO.getPrice());
+
+        Product updatedProduct = productRepository.save(product);
+
+        return productMapper.toDTO(updatedProduct);
     }
 
 
