@@ -86,8 +86,8 @@
 - [x] Create Product entity
 - [x] Create Category entity
 - [x] Create Product APIs
-- [ ] Add pagination
-- [ ] Add product search
+- [x] Add pagination
+- [x] Add product search
 - [ ] Dockerize Product Service
 
 ### Inventory Service
