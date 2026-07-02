@@ -29,7 +29,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ProductDoesNotExistsException.class)
     public ResponseEntity<ErrorDTO> productDoesNotExistsException(ProductDoesNotExistsException exception, HttpServletRequest request){
         ErrorDTO response = ErrorDTO.builder().timestamp(LocalDateTime.now())
-                .status(HttpStatus.NOT_FOUND.value())
+                .status(HttpStatus.CONFLICT.value())
                 .error("Products Does Not Exists")
                 .message(exception.getMessage())
                 .path(request.getRequestURI())

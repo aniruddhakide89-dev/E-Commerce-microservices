@@ -2,16 +2,21 @@ package com.ecommerce.service;
 
 import com.ecommerce.dto.ProductRequestDTO;
 import com.ecommerce.dto.ProductResponseDTO;
+import com.ecommerce.entity.Category;
 import com.ecommerce.entity.Product;
 import com.ecommerce.exception.ProductAlreadyExistsException;
 import com.ecommerce.exception.ProductDoesNotExistsException;
 import com.ecommerce.repository.ProductRepository;
+import com.ecommerce.repository.ProductSpecification;
 import com.ecommerce.utils.ProductMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
 
 
 @Service
@@ -33,14 +38,21 @@ public class ProductService {
         return productMapper.toDTO(product);
     }
 
-    public ProductResponseDTO getProductByName(String productName){
-        Product product = productRepository.findByProductName(productName).orElseThrow(() -> new ProductDoesNotExistsException("product with name: " + productName + " does not exists"));
-        return productMapper.toDTO(product);
-    }
-
-    public Page<ProductResponseDTO> getALlProducts(int page, int size){
-        Pageable pageable = PageRequest.of(page,size);
-        Page<Product> productPage = productRepository.findAll(pageable);
+    public Page<ProductResponseDTO> searchProduct(String name, Category category , BigDecimal minPrice, BigDecimal maxPrice , int page , int size){
+        Specification<Product> specification = Specification.where(null);
+        if(name != null){
+            specification = specification.and(ProductSpecification.hasName(name));
+        }
+        if(category != null){
+            specification = specification.and(ProductSpecification.hasCategory(category));
+        }
+        if(minPrice != null){
+            specification = specification.and(ProductSpecification.hasMinPrice(minPrice));
+        }
+        if(maxPrice != null) {
+            specification = specification.and(ProductSpecification.hasMaxPrice(maxPrice));
+        }
+        Page<Product> productPage = productRepository.findAll(specification,PageRequest.of(page,size));
         return productPage.map(productMapper::toDTO);
     }
 
@@ -63,7 +75,7 @@ public class ProductService {
         product.setDescription(productRequestDTO.getDescription());
         product.setSku(productRequestDTO.getSku());
         product.setCategory(productRequestDTO.getCategory());
-        product.setActive(productRequestDTO.getActive());
+        product.setIsActive(productRequestDTO.getIsActive());
         product.setPrice(productRequestDTO.getPrice());
 
         Product updatedProduct = productRepository.save(product);

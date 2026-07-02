@@ -1,0 +1,17 @@
+com\ecommerce\entity\Product.class
+com\ecommerce\controller\ProductController.class
+com\ecommerce\dto\ProductRequestDTO.class
+com\ecommerce\service\ProductService.class
+com\ecommerce\dto\ErrorDTO.class
+com\ecommerce\repository\ProductRepository.class
+com\ecommerce\exception\ProductDoesNotExistsException.class
+com\ecommerce\exception\GlobalExceptionHandler.class
+com\ecommerce\entity\Product$ProductBuilder.class
+com\ecommerce\utils\ProductMapper.class
+com\ecommerce\dto\ProductResponseDTO$ProductResponseDTOBuilder.class
+com\ecommerce\dto\ProductResponseDTO.class
+com\ecommerce\exception\ProductAlreadyExistsException.class
+com\ecommerce\ProductServiceApplication.class
+com\ecommerce\dto\ErrorDTO$ErrorDTOBuilder.class
+com\ecommerce\entity\Category.class
+com\ecommerce\utils\ProductMapperImpl.class

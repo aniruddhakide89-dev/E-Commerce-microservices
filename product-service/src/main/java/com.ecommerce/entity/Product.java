@@ -34,7 +34,7 @@ public class Product {
     private Category category;
 
     @Column(name = "active",nullable = false)
-    private boolean isActive;
+    private Boolean isActive;
 
     @Column(name = "price",nullable = false)
     private BigDecimal price;

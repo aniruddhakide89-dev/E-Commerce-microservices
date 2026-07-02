@@ -27,5 +27,5 @@ public class ProductRequestDTO {
     private BigDecimal price;
 
     @NotNull
-    private Boolean active;
+    private Boolean isActive;
 }

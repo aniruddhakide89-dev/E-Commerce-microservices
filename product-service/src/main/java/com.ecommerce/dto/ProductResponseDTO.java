@@ -19,7 +19,7 @@ public class ProductResponseDTO {
 
     private Category category;
 
-    private Boolean active;
+    private Boolean isActive;
 
     private BigDecimal price;
 

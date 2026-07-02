@@ -2,12 +2,15 @@ package com.ecommerce.controller;
 
 import com.ecommerce.dto.ProductRequestDTO;
 import com.ecommerce.dto.ProductResponseDTO;
+import com.ecommerce.entity.Category;
 import com.ecommerce.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.math.BigDecimal;
 
 
 @RestController
@@ -17,19 +20,22 @@ public class ProductController {
 
     private final ProductService productService;
 
-    @GetMapping
-    public ResponseEntity<Page<ProductResponseDTO>> getAllProducts(@RequestParam  int page , @RequestParam int size){
-        return  ResponseEntity.ok(productService.getALlProducts(page, size));
-    }
 
     @GetMapping("/{id}")
     public ResponseEntity<ProductResponseDTO> getProductById(@PathVariable Integer id){
         return ResponseEntity.ok(productService.getProductById(id));
     }
 
-    @GetMapping(params = "name")
-    public ResponseEntity<ProductResponseDTO> getProductByName(@RequestParam String name){
-        return ResponseEntity.ok(productService.getProductByName(name));
+    @GetMapping("/search")
+    public ResponseEntity<Page<ProductResponseDTO>> searchProducts(
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) Category category,
+            @RequestParam(required = false) BigDecimal minPrice,
+            @RequestParam(required = false) BigDecimal maxPrice,
+            @RequestParam(required = false) Boolean active,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+        return ResponseEntity.ok(productService.searchProduct(name, category, minPrice, maxPrice, page, size));
     }
 
     @PostMapping
@@ -47,6 +53,7 @@ public class ProductController {
         productService.deleteProductById(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Product with id: " + id + "deleted");
     }
+
 
 
 }
