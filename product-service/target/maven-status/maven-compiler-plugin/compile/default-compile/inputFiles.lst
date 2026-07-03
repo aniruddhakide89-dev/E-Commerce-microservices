@@ -1,0 +1,13 @@
+D:\E-commerce-microservices\product-service\src\main\java\com.ecommerce\controller\ProductController.java
+D:\E-commerce-microservices\product-service\src\main\java\com.ecommerce\dto\ErrorDTO.java
+D:\E-commerce-microservices\product-service\src\main\java\com.ecommerce\dto\ProductRequestDTO.java
+D:\E-commerce-microservices\product-service\src\main\java\com.ecommerce\dto\ProductResponseDTO.java
+D:\E-commerce-microservices\product-service\src\main\java\com.ecommerce\entity\Category.java
+D:\E-commerce-microservices\product-service\src\main\java\com.ecommerce\entity\Product.java
+D:\E-commerce-microservices\product-service\src\main\java\com.ecommerce\exception\GlobalExceptionHandler.java
+D:\E-commerce-microservices\product-service\src\main\java\com.ecommerce\exception\ProductAlreadyExistsException.java
+D:\E-commerce-microservices\product-service\src\main\java\com.ecommerce\exception\ProductDoesNotExistsException.java
+D:\E-commerce-microservices\product-service\src\main\java\com.ecommerce\ProductServiceApplication.java
+D:\E-commerce-microservices\product-service\src\main\java\com.ecommerce\repository\ProductRepository.java
+D:\E-commerce-microservices\product-service\src\main\java\com.ecommerce\service\ProductService.java
+D:\E-commerce-microservices\product-service\src\main\java\com.ecommerce\utils\ProductMapper.java

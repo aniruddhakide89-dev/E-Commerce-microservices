@@ -66,29 +66,28 @@
 ## Business Services
 
 ### User Service
-- [ ] Create User Service
-- [ ] Register with Eureka
-- [ ] Configure PostgreSQL
-- [ ] Create User entity
-- [ ] Create User repository
-- [ ] Create User service layer
-- [ ] Create User controller
-- [ ] Implement CRUD APIs
-- [ ] Add validation
-- [ ] Add exception handling
+- [x] Create User Service
+- [x] Register with Eureka
+- [x] Configure PostgreSQL
+- [x] Create User entity
+- [x] Create User repository
+- [x] Create User service layer
+- [x] Create User controller
+- [x] Implement CRUD APIs
+- [x] Add validation
+- [x] Add exception handling
 - [ ] Add OpenAPI documentation
 - [ ] Dockerize User Service
 
 ### Product Service
-- [ ] Create Product Service
-- [ ] Register with Eureka
-- [ ] Configure PostgreSQL
-- [ ] Create Product entity
-- [ ] Create Category entity
-- [ ] Create Product APIs
-- [ ] Add pagination
-- [ ] Add product search
-- [ ] Add image handling
+- [x] Create Product Service
+- [x] Register with Eureka
+- [x] Configure PostgreSQL
+- [x] Create Product entity
+- [x] Create Category entity
+- [x] Create Product APIs
+- [x] Add pagination
+- [x] Add product search
 - [ ] Dockerize Product Service
 
 ### Inventory Service

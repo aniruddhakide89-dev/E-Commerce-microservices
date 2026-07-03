@@ -1,0 +1,24 @@
+package com.ecommerce.entity;
+
+public enum Category {
+    ELECTRONICS,
+    FASHION,
+    FOOTWEAR,
+    BEAUTY,
+    HEALTH,
+    GROCERY,
+    HOME_AND_KITCHEN,
+    FURNITURE,
+    BOOKS,
+    SPORTS_AND_FITNESS,
+    TOYS_AND_GAMES,
+    AUTOMOTIVE,
+    PET_SUPPLIES,
+    OFFICE_SUPPLIES,
+    JEWELRY,
+    BABY_PRODUCTS,
+    MOBILE_ACCESSORIES,
+    COMPUTERS,
+    APPLIANCES,
+    OTHER
+}

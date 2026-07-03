@@ -1,0 +1,16 @@
+com\ecommerce\dto\UserDTO.class
+com\ecommerce\utils\UserMapperImpl.class
+com\ecommerce\exception\UserNotFoundException.class
+com\ecommerce\dto\ErrorDTO.class
+com\ecommerce\entity\Role.class
+com\ecommerce\repository\UserRepository.class
+com\ecommerce\exception\GlobalExceptionHandler.class
+com\ecommerce\exception\UserAlreadyExistsException.class
+com\ecommerce\utils\UserMapper.class
+com\ecommerce\UserServiceApplication.class
+com\ecommerce\service\UserService.class
+com\ecommerce\dto\ErrorDTO$ErrorDTOBuilder.class
+com\ecommerce\entity\User.class
+com\ecommerce\entity\User$UserBuilder.class
+com\ecommerce\controller\UserController.class
+com\ecommerce\entity\CountryCode.class
