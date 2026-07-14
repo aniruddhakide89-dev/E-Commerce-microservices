@@ -91,13 +91,13 @@
 - [ ] Dockerize Product Service
 
 ### Inventory Service
-- [ ] Create Inventory Service
-- [ ] Register with Eureka
-- [ ] Configure database
-- [ ] Create Inventory entity
-- [ ] Create stock APIs
-- [ ] Implement stock reservation
-- [ ] Implement stock release
+- [x] Create Inventory Service
+- [x] Register with Eureka
+- [x] Configure database
+- [x] Create Inventory entity
+- [x] Create stock APIs
+- [x] Implement stock reservation
+- [x] Implement stock release
 - [ ] Dockerize Inventory Service
 
 ### Cart Service
