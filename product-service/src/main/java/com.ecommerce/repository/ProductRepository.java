@@ -9,4 +9,5 @@ import java.util.Optional;
 public interface ProductRepository extends JpaRepository<Product,Integer> , JpaSpecificationExecutor<Product> {
     boolean existsByProductName(String productName);
     Optional<Product> findByProductName(String productName);
+    Optional<Product> getBySku(String sku);
 }

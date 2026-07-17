@@ -38,6 +38,11 @@ public class ProductService {
         return productMapper.toDTO(product);
     }
 
+    public ProductResponseDTO getBySku(String sku){
+        Product product = productRepository.getBySku(sku).orElseThrow(() -> new ProductDoesNotExistsException("Product with sku does not exists"));
+        return productMapper.toDTO(product);
+    }
+
     public Page<ProductResponseDTO> searchProduct(String name, Category category , BigDecimal minPrice, BigDecimal maxPrice , int page , int size){
         Specification<Product> specification = Specification.where(null);
         if(name != null){

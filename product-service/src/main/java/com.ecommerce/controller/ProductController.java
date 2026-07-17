@@ -26,6 +26,11 @@ public class ProductController {
         return ResponseEntity.ok(productService.getProductById(id));
     }
 
+    @GetMapping("/sku/{sku}")
+    public ResponseEntity<ProductResponseDTO> getProductBySKU(@PathVariable String sku){
+        return ResponseEntity.ok(productService.getBySku(sku));
+    }
+
     @GetMapping("/search")
     public ResponseEntity<Page<ProductResponseDTO>> searchProducts(
             @RequestParam(required = false) String name,
